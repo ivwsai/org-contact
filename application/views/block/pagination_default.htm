@@ -1,0 +1,114 @@
+<p class="pagination">
+	共$pagination['total_items']条记录
+	每页
+	<select name="size" onchange="changePageSize(this);">
+	<!--{loop $pagination['items_per_page_arr'] $key $item}-->
+		<option value="{$item}" <!--{if $pagination['items_per_page'] == $item}--> selected="selected"<!--{/if}--> >{$item}</option>
+	<!--{/loop}-->
+	</select>
+	条
+	<!--{if $pagination['first_page'] !== FALSE}-->
+		<a href="{eval echo $pagination->page_url($pagination['first_page'])}" rel="first"><span class="go_first pngFix">首页</span></a>
+	<!--{else}-->
+		<span class="go_first pngFix">首页</span>
+	<!--{/if}-->
+	<!--{if $pagination['previous_page'] !== FALSE}-->
+		<a href="{eval echo $pagination->page_url($pagination['previous_page'])}" rel="prev"><span class="go_previous pngFix">上一页</span></a>
+	<!--{else}-->
+		<span class="go_previous pngFix">上一页</span>
+	<!--{/if}-->
+	<!--{for $i=1;$i<=$pagination['total_pages'];$i++}-->
+		<!--{if $i == $pagination['current_page']}-->
+			<strong >{$i}/{$pagination['total_pages']}</strong>
+		<!--{/if}-->
+	<!--{/for}-->
+	<!--{if $pagination['next_page'] !== FALSE}-->
+		<a href="{eval echo $pagination->page_url($pagination['next_page'])}" rel="next"><span class="go_next pngFix">下一页</span></a>
+	<!--{else}-->
+		<span class="go_next pngFix">下一页</span>
+	<!--{/if}-->
+	<!--{if $pagination['last_page'] !== FALSE}-->
+		<a href="{eval echo $pagination->page_url($pagination['last_page'])}" rel="last"><span class="go_last pngFix">末页</span></a>
+	<!--{else}-->
+		<span class="go_last pngFix">末页</span>
+	<!--{/if}-->
+	<span class="pageJump">
+	跳转到<input type="text" value="{$pagination['current_page']}" class="jumpToPage" onclick="this.select();" />页 
+	<input class="smallBtn" type="button" value="GO" onclick="skip();" />
+
+</p><!-- .pagination -->
+<script type="text/javascript">
+// 获取url参数
+function getURL(){
+	var args = {};
+	var query = location.search.substring(1);
+	var pairs = query.split("&");
+	for(var i = 0; i < pairs.length; i++) {
+		var pos = pairs[i].indexOf('=');
+		if (pos == -1) continue;
+		var argname = pairs[i].substring(0,pos);
+		var value = pairs[i].substring(pos+1);
+		value = decodeURIComponent(value);
+		args[argname] = value;
+	}
+	return args;
+}
+
+function getNewHref(index, value) {
+	var gets = getURL(), url = '?';
+	
+	$.each(gets, function(key, val) {		
+		if (index === key)
+			url += key + '=' + value + '&';
+		else
+			url += key + '=' + val + '&';
+	})
+	
+	if (url === '?') {
+		return location.href + '?' + index + '=' + value;
+	}
+	else if (typeof gets[index] === 'undefined') {
+		return location.href + '&' + index + '=' + value;
+	}
+	else {
+		return location.href.split('?')[0] + url.substr(0, url.length - 1);
+	}
+}
+
+function getDeleteHref(index1, index2) {
+	var gets = getURL(), url = '?';
+	
+	$.each(gets, function(key, val) {		
+		if (index1 !== key && index2 !== key)
+			url += key + '=' + val + '&';
+	})
+	
+	return location.href.split('?')[0] + url.substr(0, url.length - 1);
+}
+
+// 分页跳转
+function skip() {
+	var pageUrl   = '{eval echo $pagination->page_url()}';
+	var totalPage = {$pagination['total_pages']};
+	var goto	  = $('.jumpToPage').val();
+	
+	if (!/^[1-9]+[0-9]*]*$/.test(goto) || parseInt(goto) > totalPage) {
+		location.href = getNewHref('page', totalPage);//location.href = pageUrl + '&page=' + totalPage;
+		return;
+	}
+	
+	location.href = getNewHref('page', goto);
+}
+
+// 改变分页大小
+function changePageSize(o) {
+	var deleteHref = getDeleteHref('page', 'size');
+
+	if (typeof deleteHref.split('?')[1] === 'undefined') {
+		location.href = deleteHref + '?size=' + $(o).val();
+	}
+	else {
+		location.href = deleteHref + '&size=' + $(o).val();
+	}
+}
+</script>

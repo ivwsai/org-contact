@@ -1,0 +1,5 @@
+"Permission denied to call method Location.toString" JavaScript error when viewing a web site
+
+http://www-01.ibm.com/support/docview.wss?uid=swg21370430
+
+http://stackoverflow.com/questions/13100611/replace-url-from-youtube-to-embed-code-error-permission-denied-to-access-prop

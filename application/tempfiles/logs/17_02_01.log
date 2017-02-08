@@ -1,0 +1,122 @@
+[2017-02-01 00:47:19:769][INFO][/api/dept/edit][/usr/local/nginx-1.7.6/html/netap2/application/controllers/api/dept.php][LINE65]
+Undefined property: Controller_Dept::$unit_id
+[2017-02-01 00:48:30:149][INFO][/api/dept/delete][/usr/local/nginx-1.7.6/html/netap2/application/controllers/api/dept.php][LINE108]
+Undefined property: Controller_Dept::$org_ds
+[2017-02-01 01:16:44:408][ERROR][/api/student/export?class_id=10][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/api/student/export 不存在!
+[2017-02-01 01:18:46:768][ERROR][/api/student/getInitialpwd][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/api/student/getInitialpwd 不存在!
+[2017-02-01 01:18:54:955][ERROR][/api/student/getInitialpwd][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/api/student/getInitialpwd 不存在!
+[2017-02-01 01:18:59:384][ERROR][/api/student/getInitialpwd][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/api/student/getInitialpwd 不存在!
+[2017-02-01 01:41:18:463][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE442]
+[MySQLi Query Error] Duplicate entry '123-言' for key 'name_org_id_UNIQUE'
+[2017-02-01 01:41:27:159][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE442]
+[MySQLi Query Error] Duplicate entry '123-言' for key 'name_org_id_UNIQUE'
+[2017-02-01 01:55:51:331][ERROR][/api/dept/detail?id=16][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE97]
+Class 'Model_Org_User' not found
+[2017-02-01 02:13:34:688][INFO][/api/dept/detail?id=16][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE97]
+Undefined property: Service_Dept::$org_ds
+[2017-02-01 02:13:43:69][INFO][/api/dept/detail?id=16][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE97]
+Undefined property: Service_Dept::$org_ds
+[2017-02-01 12:17:39:903][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-01 12:17:40:185][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-01 13:46:13:207][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '13:46:13,1485927973204)' at line 1
+[2017-02-01 13:46:21:916][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '13:46:21,1485927981916)' at line 1
+[2017-02-01 14:29:33:946][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-01 14:29:34:119][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-01 21:05:29:885][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-01 21:05:30:76][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-01 22:16:20:549][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/application/models/account.php][LINE30]
+Cannot use object of type Model_Org_User as array
+[2017-02-01 22:17:40:174][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:19:04:204][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:19:53:45][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:22:36:425][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:23:29:23][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:23:29:24][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Unknown column 'mobile' in 'field list'
+[2017-02-01 22:26:46:904][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:27:50:519][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:28:12:641][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:30:37:652][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:31:05:612][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:31:28:698][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:31:28:700][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Duplicate entry '18558730096' for key 'mobile_UNIQUE'
+[2017-02-01 22:49:28:220][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:50:16:746][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 22:54:07:886][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 22:54:40:793][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 22:54:42:795][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:08:09:806][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:08:34:519][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:08:34:520][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Duplicate entry '18558730096' for key 'mobile_UNIQUE'
+[2017-02-01 23:09:33:750][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:10:41:608][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:12:05:207][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:15:55:119][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:17:27:358][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:34:36:436][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:34:36:437][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Incorrect date value: '' for column 'birthday' at row 1
+[2017-02-01 23:35:35:502][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:40:14:468][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:44:46:929][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:44:51:572][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:45:11:580][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:45:11:581][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Field 'user_id' doesn't have a default value
+[2017-02-01 23:46:31:11][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:47:32:347][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:52:41:590][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:54:31:764][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-01 23:59:19:749][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:59:29:199][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-01 23:59:48:799][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa

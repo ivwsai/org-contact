@@ -1,0 +1,8 @@
+{{for data=sinfo key=key item=msg}}
+<li name="{{msg.user_id}}">
+  {{msg.name}}
+  {{if (msg.deptname !== "")}}
+  - {{msg.deptname}}
+  {{endif}}
+</li>
+{{endfor}}

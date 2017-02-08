@@ -1,0 +1,30 @@
+[2017-02-04 00:19:34:588][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-04 00:19:40:280][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-04 00:19:48:562][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:20:16:993][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:23:01:434][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:23:22:413][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:23:38:635][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:24:00:132][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:24:17:321][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:24:33:825][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:24:48:546][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-02-04 00:31:06:565][ERROR][/api/staff/list?getsub=1&search=dd&page=1&size=10][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Unknown column 'us.name' in 'where clause'
+[2017-02-04 00:37:43:973][ERROR][/api/dept/info?dept_id=23][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE103]
+Class 'Model_User' not found
+[2017-02-04 00:37:53:931][ERROR][/api/dept/info?dept_id=23][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE103]
+Class 'Model_User' not found
+[2017-02-04 00:54:02:204][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa

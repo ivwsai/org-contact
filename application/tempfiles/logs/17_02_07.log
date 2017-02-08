@@ -1,0 +1,26 @@
+[2017-02-07 00:47:21:75][ERROR][/api/dept/edit][/usr/local/nginx-1.7.6/html/netap2/application/models/org_dept.php][LINE103]
+[MySQLi Query Error] Column 'parent_id' cannot be null
+[2017-02-07 00:47:30:845][ERROR][/api/dept/edit][/usr/local/nginx-1.7.6/html/netap2/application/models/org_dept.php][LINE103]
+[MySQLi Query Error] Column 'parent_id' cannot be null
+[2017-02-07 00:47:48:990][ERROR][/api/dept/edit][/usr/local/nginx-1.7.6/html/netap2/application/models/org_dept.php][LINE103]
+[MySQLi Query Error] Column 'parent_id' cannot be null
+[2017-02-07 20:49:25:855][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-07 20:49:25:998][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-02-07 22:15:06:257][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-07 22:15:06:259][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Unknown column 'password' in 'field list'
+[2017-02-07 22:15:11:645][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-07 22:15:11:645][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Unknown column 'password' in 'field list'
+[2017-02-07 22:15:25:401][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-02-07 22:15:25:401][ERROR][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE443]
+[MySQLi Query Error] Unknown column 'password' in 'field list'
+[2017-02-07 22:58:46:558][ERROR][/api/staff/edit][/usr/local/nginx-1.7.6/html/netap2/application/models/org_user.php][LINE94]
+[MySQLi Query Error] Unknown column 'seat' in 'field list'
+[2017-02-07 23:00:14:66][INFO][/api/staff/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa

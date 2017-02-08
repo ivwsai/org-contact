@@ -1,0 +1,130 @@
+[2017-01-31 16:04:42:866][ERROR][/api/dept/add][Unknown][LINE0]
+Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead.
+[2017-01-31 16:04:44:825][ERROR][/api/dept/add][Unknown][LINE0]
+Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead.
+[2017-01-31 16:07:02:437][ERROR][/api/dept/add][Unknown][LINE0]
+Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead.
+[2017-01-31 16:07:49:863][ERROR][/api/dept/add][Unknown][LINE0]
+Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead.
+[2017-01-31 16:09:09:521][ERROR][/api/dept/add][Unknown][LINE0]
+Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead.
+[2017-01-31 16:21:17:885][WARN][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/lang.php][LINE34]
+include(/usr/local/nginx-1.7.6/html/netap2/application/language/zh/lang_unit.php): failed to open stream: No such file or directory
+[2017-01-31 18:13:46:486][WARN][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE15]
+Missing argument 2 for Service_Dept::addDept(), called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/dept.php on line 32 and defined
+[2017-01-31 18:15:27:603][WARN][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE34]
+Missing argument 1 for Netap_DsTa::getDb(), called in /usr/local/nginx-1.7.6/html/netap2/application/service/dept.php on line 19 and defined
+[2017-01-31 18:17:02:133][WARN][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE34]
+Missing argument 1 for Netap_DsTa::getDb(), called in /usr/local/nginx-1.7.6/html/netap2/application/service/dept.php on line 19 and defined
+[2017-01-31 18:18:20:367][WARN][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE34]
+Missing argument 1 for Netap_DsTa::getDb(), called in /usr/local/nginx-1.7.6/html/netap2/application/service/dept.php on line 19 and defined
+[2017-01-31 18:18:49:292][WARN][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE34]
+Missing argument 1 for Netap_DsTa::getDb(), called in /usr/local/nginx-1.7.6/html/netap2/application/service/dept.php on line 19 and defined
+[2017-01-31 18:19:57:688][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:21:57:534][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE23]
+Undefined index: name
+[2017-01-31 18:21:57:535][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:28:55:276][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/application/models/org_dept.php][LINE33]
+Argument 2 passed to Model_Org_Dept::addDept() must be of the type array, string given, called in /usr/local/nginx-1.7.6/html/netap2/application/service/dept.php on line 23 and defined
+[2017-01-31 18:28:55:278][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:29:23:913][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/application/models/org_dept.php][LINE33]
+Argument 2 passed to Model_Org_Dept::addDept() must be of the type array, string given, called in /usr/local/nginx-1.7.6/html/netap2/application/service/dept.php on line 23 and defined
+[2017-01-31 18:29:23:914][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:30:07:199][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:30:36:988][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/application/models/org_dept.php][LINE33]
+Argument 2 passed to Model_Org_Dept::addDept() must be of the type array, string given, called in /usr/local/nginx-1.7.6/html/netap2/application/service/dept.php on line 23 and defined
+[2017-01-31 18:30:36:989][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:31:55:260][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:31:55:262][ERROR][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE442]
+[MySQLi Query Error] Unknown column 'unit_id' in 'field list'
+[2017-01-31 18:32:43:426][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:34:58:839][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:38:12:975][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE98]
+ROLLBACK:127.0.0.1:3306:oa
+[2017-01-31 18:38:31:515][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-01-31 18:38:56:991][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-01-31 18:55:25:184][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-01-31 18:55:25:405][ERROR][/calendar/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/calendar/ 不存在!
+[2017-01-31 22:30:03:353][INFO][/api/org/tree][/usr/local/nginx-1.7.6/html/netap2/application/controllers/api/org.php][LINE16]
+Array to string conversion
+[2017-01-31 22:32:29:264][INFO][/api/org/tree][/usr/local/nginx-1.7.6/html/netap2/application/controllers/api/org.php][LINE16]
+Array to string conversion
+[2017-01-31 22:33:27:408][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-01-31 22:33:41:113][INFO][/api/org/tree][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE157]
+Undefined index: id
+[2017-01-31 22:34:34:793][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-01-31 22:34:58:809][INFO][/api/dept/add][/usr/local/nginx-1.7.6/html/netap2/system/classes/dsta.php][LINE79]
+COMMIT:127.0.0.1:3306:oa
+[2017-01-31 23:04:32:486][INFO][/api/dept/delete][/usr/local/nginx-1.7.6/html/netap2/application/controllers/api/dept.php][LINE53]
+Undefined property: Controller_Dept::$org_ds
+[2017-01-31 23:13:03:979][WARN][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:13:03:981][WARN][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:34:51:971][INFO][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE80]
+Undefined property: Model_Org_Dept::$columns
+[2017-01-31 23:34:51:973][WARN][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:35:35:380][INFO][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE80]
+Undefined property: Model_Org_Dept::$columns
+[2017-01-31 23:35:35:382][WARN][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:35:49:662][INFO][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE80]
+Undefined property: Model_Org_Dept::$columns
+[2017-01-31 23:35:49:662][WARN][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:36:26:25][INFO][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE80]
+Undefined property: Model_Org_Dept::$columns
+[2017-01-31 23:36:26:26][WARN][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:36:29:344][INFO][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE80]
+Undefined property: Model_Org_Dept::$columns
+[2017-01-31 23:36:29:344][WARN][/api/dept/info?id=7][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:36:32:78][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:36:32:78][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:36:35:324][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:36:35:325][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:04:637][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:04:638][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:06:597][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:06:598][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:21:47][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:21:48][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:25:943][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:37:25:944][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:39:06:695][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/helpers/http.php][LINE134]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:39:06:696][WARN][/api/dept/info][/usr/local/nginx-1.7.6/html/netap2/system/classes/core.php][LINE284]
+Cannot modify header information - headers already sent by (output started at /usr/local/nginx-1.7.6/html/netap2/info.php:1)
+[2017-01-31 23:39:44:353][INFO][/api/dept/detail?id=7][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE80]
+Undefined property: Model_Org_Dept::$columns
+[2017-01-31 23:40:55:483][INFO][/api/dept/detail?id=7][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE84]
+Undefined index: chief_uid

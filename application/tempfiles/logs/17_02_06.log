@@ -1,0 +1,14 @@
+[2017-02-06 03:01:24:356][ERROR][/staff/][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/staff/ 不存在!
+[2017-02-06 03:01:38:739][ERROR][/staff/delta_list][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/staff/delta_list 不存在!
+[2017-02-06 03:02:04:570][ERROR][/staff/delta_list][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/staff/delta_list 不存在!
+[2017-02-06 03:02:30:758][ERROR][/staff/list][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/staff/list 不存在!
+[2017-02-06 03:02:32:462][ERROR][/staff/list][/usr/local/nginx-1.7.6/html/netap2/system/classes/request.php][LINE122]
+访问路径(1)：/staff/list 不存在!
+[2017-02-06 22:42:35:29][INFO][/api/dept/edit][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE52]
+Undefined index: name
+[2017-02-06 22:46:42:351][INFO][/api/dept/edit][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE64]
+Undefined index: chief_uid

@@ -1,0 +1,21 @@
+<div class="input_box">
+  <div>
+    <label for="parentnode">父节点：</label>
+    <input type="text" name="parentnode" value="{{parentText}}" id="parentnode" disabled="disabled" />
+  </div>
+  <div>
+    <label for="nodename"><b>*</b>名称：</label>
+    <input type="text" name="nodename" id="nodename" value="{{curTitle}}" />
+  </div>
+  <div>
+    <label for="deptseq">序号</label>
+    <input type="text" name="seq" id="deptseq" value="{{curSeq}}" />
+  </div>
+  {{if (isLastNode)}}
+  <div>
+    <label for="fdy">部门长：</label>
+    <input type="text" name="fdy" id="fdy" value="{{managerName}}" />
+    <ul id="searchList"></ul>
+  </div>
+  {{endif}}
+</div>

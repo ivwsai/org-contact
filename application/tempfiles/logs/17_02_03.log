@@ -1,0 +1,22 @@
+[2017-02-03 22:57:21:377][WARN][/api/org/tree][/usr/local/nginx-1.7.6/html/netap2/system/classes/mysqli.php][LINE78]
+mysqli::mysqli(): (HY000/2002): Connection refused
+[2017-02-03 23:15:38:73][ERROR][/api/staff/list?getsub=1&search=%E5%9C%A8&page=1&size=10][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 72 and defined
+[2017-02-03 23:15:55:19][ERROR][/api/staff/list?getsub=1&dept_id=20&page=1&size=10][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 72 and defined
+[2017-02-03 23:15:55:30][ERROR][/api/dept/info?dept_id=20][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE103]
+Class 'Model_User' not found
+[2017-02-03 23:15:59:518][ERROR][/api/staff/list?getsub=1&dept_id=48&page=1&size=10][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 72 and defined
+[2017-02-03 23:16:06:552][ERROR][/api/staff/list?getsub=1&dept_id=20&page=1&size=10][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 72 and defined
+[2017-02-03 23:16:06:566][ERROR][/api/dept/info?dept_id=20][/usr/local/nginx-1.7.6/html/netap2/application/service/dept.php][LINE103]
+Class 'Model_User' not found
+[2017-02-03 23:16:11:964][ERROR][/api/staff/list?getsub=1&dept_id=48&page=1&size=10][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 72 and defined
+[2017-02-03 23:16:16:482][ERROR][/api/staff/list?search=x][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 72 and defined
+[2017-02-03 23:16:23:609][ERROR][/api/staff/list?search=x][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 72 and defined
+[2017-02-03 23:18:21:926][ERROR][/api/staff/list?getsub=1&search=dddd&page=1&size=10][/usr/local/nginx-1.7.6/html/netap2/application/helpers/data.php][LINE24]
+Argument 1 passed to Helper_Data::formatType() must be of the type array, null given, called in /usr/local/nginx-1.7.6/html/netap2/application/controllers/api/staff.php on line 76 and defined

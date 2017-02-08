@@ -1,0 +1,55 @@
+# Turn on URL rewriting
+Options -Indexes
+RewriteEngine On
+
+# Installation directory
+RewriteBase /netap2
+
+# Protect hidden files from being viewed
+<Files .*>
+	Order Deny,Allow
+	Deny From All
+</Files>
+
+<ifModule mod_xsendfile.c>
+	<Files *.php>
+		XSendFile On
+		SetEnv MOD_X_SENDFILE_ENABLED 1
+	</Files>
+</IfModule>
+
+# Protect application and system files from being viewed
+RewriteRule ^(?:application|modules|system|tests|userguide)/ - [F,L]
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/URL
+#RewriteRule .* index.php/$0 [PT]
+#RewriteRule .* index.php/api/$0 [PT]
+
+<IfModule mod_php5.c>
+	RewriteRule .* index.php/$0 [L]
+</IfModule>
+<IfModule !mod_php5.c>
+	RewriteRule .* index.php [L,E=PATH_INFO:/$0]
+</IfModule>
+
+## fastcgi模式强制多一层目录需修改netap2的detect_uri()方法
+
+#RewirteRule 标记	含义	描述
+#R	Redirect	发出一个HTTP重定向
+#F	Forbidden	禁止对URL地址的存取
+#G	Gone	标记ＵＲＬ地址不存在
+#P	Proxy	将URL地址传递至mod_proxy
+#L	Last	停止处理接下来的规则
+#N	Next	再次从第一个规则开始处理，但是使用当前重写后的URL地址
+#C	Chain	将当前的规则和紧随其后的规则链接起来
+#T	Type	强制执行指明的MIME类
+#NS	Nosubreq	只在没有任何内部子请求执行时运用本规则
+#NC	Nocase	URL地址匹配对大小写敏感
+#QSA	Qsappend	在新的URL地址后附加查询字符串部分，而不是替代
+#PT	Passthrough	将重写后的URL地址传递给另一个Apache模块进行进一步处理
+#S	Skip	忽略之后的规则
+#E	Env	设置环境变量

@@ -1,0 +1,27 @@
+{{if (slist.total >= 1)}}
+<table id="staffsInfo">
+  <tr>
+    <th class="first"><input type="checkbox" name="checkAll" id="checkAll" data-action="checkAll" /><span>帐号</span></th>
+    <th class="second">姓名</th>
+    <th class="third">入司时间</th>
+    <th class="four">手机</th>
+    <th class="five">部门</th>
+    <th class="six">操作</th>
+  </tr>
+  {{for data=slist.data key=key1 item=msg}}
+  <tr name="{{msg.user_id}}">
+    <td><input type="checkbox" name="singleStu" class="" />{{msg.account}}</td>
+    <td><span class="cp" data-action="editStaff">{{msg.name}}</span></td>
+    <td>{{msg.joindate}}</td>
+    <td>{{msg.mobile}}</td>
+    <td>{{msg.deptname}}</td>
+    <td>
+      <span data-action="editStaff" class="edit_staff">修改</span>
+      <span data-action="delStaff" class="del_staff">删除</span>
+    </td>
+  </tr>
+  {{endfor}}
+</table>
+{{else}}
+<p>暂无职员信息</p>
+{{endif}}

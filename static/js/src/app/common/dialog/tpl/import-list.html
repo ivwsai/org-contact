@@ -1,0 +1,19 @@
+{{if (typeof type == 'object')}}
+<li class="err">
+  <span>{{msglist.workid}}</span>
+  <span>{{msglist.username}}</span>
+  <span>{{msglist.joindate}}</span>
+  <span>{{msglist.mobilephone}}</span>
+  <span>{{msglist.cardno}}</span>
+  <span>FALSE（{{errmsg}}）!</span>
+</li>
+{{else}}
+<li>
+  <span>{{msglist.workid}}</span>
+  <span>{{msglist.username}}</span>
+  <span>{{msglist.joindate}}</span>
+  <span>{{msglist.mobilephone}}</span>
+  <span>{{msglist.cardno}}</span>
+  <span>{{type}}</span>
+</li>
+{{endif}}

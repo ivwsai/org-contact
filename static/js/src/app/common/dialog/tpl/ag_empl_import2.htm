@@ -1,0 +1,84 @@
+<!--{template 'header2'}-->
+<div class="globalBody">
+    <div class="dtMainBody">
+        <div class="dtSmallBody">
+            <form id="importEmployee" action="{{base_url}}/api/staff/import" method="post" name="importEmployee" enctype="multipart/form-data">
+                <div class="bigForm divContentTable">
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <h3 class="first">步骤一：准备职员信息</h3>
+                                <p>使用模板文件录入信息。</p>
+                                <p>为保证正确导入，请按照模板内的要求进行填写</p>
+                                <!--<input type="button" value="下载模板" onclick="window.location.href='{BASE_URL}export/template/staffs'" />-->
+                                <div class="btn_area" style="margin-bottom: 30px;">
+                                  <a href="{{base_url}}/static/excel/template.xls" class="btn">下载模板</a>
+                                  <p>若已准备好数据文件，请直接进行步骤二</p>
+                                </div>
+                                <!--请先下载 <a target="_blank" href="{BASE_URL}export/template/staffs">职员列表模板</a>，按格式填写完成后上传-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>步骤二：上传数据文件</h3>
+                                <!--<p class="red">您的可新增职员容量为 <b>&lt;!&ndash;{$available_quota}&ndash;&gt;</b> 人，多出部分{lang view_system.empler}将无法导入。</p>-->
+                                <p>点击下方按钮选择文件即可上传。目前支持类型为*.xls。</p>
+                                <div class="btn_area">
+                                  <div id="importBtn" class="btn" style="width: auto;background: transparent;">选择文件</div>
+                                  <p id="fileLj"></p>
+                                </div>
+                                <!--<p><input id="allowinvite" name="allowinvite" type="checkbox" checked="checked" /><label for="allowinvite">允许这些新{lang view_system.empler}再邀请他人</label></p>
+                                <p><input id="sendnotice" name="sendnotice" type="checkbox" checked="checked" /><label for="sendnotice">同时发送邀请短信/邮件</label></p>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="footer">
+                                <span class="aBtn yesBtn"><input type="button" value="开始导入" onclick="startImport()"  /></span>
+                                <span class="aBtn noBtn"><input type="button" value="取消" /></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div id="processContent" style="display: none;">
+            <div style="margin-bottom: 20px;">完成时间：<span id="importResultTime"></span></div>
+            <div class="process ovh">
+              <div class="gc">完成：<strong>0%</strong></div>
+              <div id="processBar" class="ovh">
+                <div id="curProcess"></div>
+              </div>
+            </div>
+        </div>
+        <div id="importResult" style="display: none; padding: 20px 20px 20px 50px;">
+          <div>共读取<span class="" id="processData"></span>条记录，其中：成功<span id="importSuccNum"></span>条，失败<span id="importFailNum" style="color: red;"></span>条</div>
+          <div id="importMsg">
+            <div class="nav_box">
+              <ul class="nav">
+                <li>全部</li>
+                <li class="current">失败</li>
+                <li>成功</li>
+              </ul>
+            </div>
+            <div class="cnt">
+              <ul id="allList" class="dn"></ul>
+              <ul id="errList"></ul>
+              <ul id="successList" class="dn"></ul>
+            </div>
+          </div>
+          <div id="showExport">
+            <p class="cp dn" onclick="exportErrorData()">将日志保存到本地</p>
+            <div class="footer">
+              <span class="aBtn noBtn"><input type="button" value="确定" /></span>
+            </div>
+          </div>
+        </div>
+        <div id="timeout">
+          <div>抱歉，由于网络问题导入未成功</div>
+          <div class="footer">
+            <span class="aBtn yesBtn"><input type="button" value="重新导入" onclick="startImport()" /></span>
+            <span class="aBtn noBtn"><input type="button" value="取消" /></span>
+          </div>
+        </div>
+    </div>
+</div>
