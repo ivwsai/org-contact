@@ -17,6 +17,7 @@ class Model_Account extends Netap_Model
         'status' => 0,
         'create_time' => '',
         'update_time' => 0,
+        'org_id' => 0, //管理的组织id
     );
 
     /**
@@ -67,7 +68,7 @@ class Model_Account extends Netap_Model
      * @return array|null
      */
     public function getInfo($user_id) {
-        $user_id = intval($user_id);
+        $user_id = floatval($user_id);
 
         $sql = "SELECT * FROM `account` WHERE `user_id`=$user_id";
         return $this->_db->fetch_first($sql);
@@ -80,7 +81,7 @@ class Model_Account extends Netap_Model
      * @return array
      */
     public function getInfoByUids(array $uids) {
-        array_walk($uids, function(&$item){ $item = (int)$item; });
+        array_walk($uids, function(&$item){ $item = floatval($item); });
         $uids = array_unique(array_filter($uids));
         if (empty($uids)) {
             return array();
@@ -123,6 +124,7 @@ class Model_Account extends Netap_Model
     public function getInfoByEmail($email) {
         $email = $this->_db->escapeString($email);
         $sql = "SELECT * FROM `account` WHERE `email`='$email' LIMIT 1";
+        //echo $sql;exit;
         return $this->_db->fetch_first($sql);
     }
 

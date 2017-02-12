@@ -29,6 +29,7 @@
             <!--// <div class="rpwd" title="重置密码" data-action="resetPwd"></div> //-->
             <div class="del" title="删除" data-action="delStaff"></div>
             <!--// <div class="appeal" title="设置初始密码" data-action="setPwd"></div> //-->
+            <div class="exit" data-action="loginOut"></div>
           </div>
         </div>
         <div id="data_show">

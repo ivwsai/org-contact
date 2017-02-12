@@ -19,7 +19,6 @@ class Model_Org_Dept extends Netap_Model
         'seq' => 0,
         'chief_uid' => 0,
         'status' => 0,
-        'gid' => 0,
         'create_time' => '',
         'update_time' => 0,
     );
@@ -37,7 +36,7 @@ class Model_Org_Dept extends Netap_Model
             return false;
         }
 
-        $ext_columns['org_id'] = $org_id;
+        $ext_columns['org_id'] = floatval($org_id);
         $ext_columns['create_time'] = date('Y-m-d H:i:s', time());
         if (!isset($ext_columns['chief_uid'])) {
             $ext_columns['chief_uid'] = 0;
@@ -78,8 +77,8 @@ class Model_Org_Dept extends Netap_Model
     public function editDept($org_id, $dept_id, array $depts)
     {
         //格式化参数
-        $org_id = intval($org_id);
-        $dept_id = intval($dept_id);
+        $org_id = floatval($org_id);
+        $dept_id = floatval($dept_id);
 
         if (isset($depts['name'])) {
             //生成拼音字段
@@ -115,8 +114,8 @@ class Model_Org_Dept extends Netap_Model
      */
     public function deleteDept($org_id, $dept_id)
     {
-        $org_id = intval($org_id);
-        $dept_id = intval($dept_id);
+        $org_id = floatval($org_id);
+        $dept_id = floatval($dept_id);
         $msec = round(microtime(true), 3) * 1000; //精确到毫秒
 
         try {
@@ -138,8 +137,8 @@ class Model_Org_Dept extends Netap_Model
     public function getDepts($org_id, $limit = 1500)
     {
 
-        $org_id = (int)$org_id;
-        $limit = (int)$limit;
+        $org_id = floatval($org_id);
+        $limit = floatval($limit);
 
         $sql = "SELECT `dept_id`, `parent_id`, `name`, `spell1`, `spell2`,`seq` FROM `org_dept` WHERE `org_id`=$org_id AND `status`=1";
         $sql .= " ORDER BY `seq` ASC, `dept_id` ASC LIMIT $limit";
@@ -196,8 +195,8 @@ class Model_Org_Dept extends Netap_Model
      */
     public function getDeptInfo($org_id, $dept_id)
     {
-        $org_id = intval($org_id);
-        $dept_id = intval($dept_id);
+        $org_id = floatval($org_id);
+        $dept_id = floatval($dept_id);
 
         $sql = "SELECT * FROM org_dept WHERE dept_id=$dept_id AND org_id=$org_id AND `status`=1 LIMIT 1";
         return $this->_db->fetch_first($sql);
@@ -214,9 +213,9 @@ class Model_Org_Dept extends Netap_Model
      */
     public function getDeptsByIds($org_id, array $dept_ids)
     {
-        $org_id = intval($org_id);
+        $org_id = floatval($org_id);
         array_walk($dept_ids, function (&$item) {
-            $item = intval($item);
+            $item = floatval($item);
         });
         $dept_ids = implode(',', $dept_ids);
 
@@ -236,11 +235,11 @@ class Model_Org_Dept extends Netap_Model
      */
     public function existsDeptSibling($org_id, $deptname, $parent = 0, $strip_id = null)
     {
-        $org_id = intval($org_id);
-        $parent = intval($parent);
+        $org_id = floatval($org_id);
+        $parent = floatval($parent);
         $deptname = $this->_db->escapeString($deptname);
         if ($strip_id) {
-            $strip_id = intval($strip_id);
+            $strip_id = floatval($strip_id);
             $sql = "SELECT 1 FROM `org_dept` WHERE `org_id`=$org_id AND `parent_id`=$parent AND `name`='$deptname' AND `dept_id`<>$strip_id AND `status`=1 LIMIT 1";
         } else {
             $sql = "SELECT 1 FROM `org_dept` WHERE `org_id`=$org_id AND `parent_id`=$parent AND `name`='$deptname' AND `status`=1 LIMIT 1";
@@ -263,8 +262,8 @@ class Model_Org_Dept extends Netap_Model
      */
     public function existsDeptSub($org_id, $parent = 0)
     {
-        $org_id = intval($org_id);
-        $parent = intval($parent);
+        $org_id = floatval($org_id);
+        $parent = floatval($parent);
 
         $sql = "SELECT 1 FROM `org_dept` WHERE `org_id`=$org_id AND `parent_id`=$parent AND `status`=1 LIMIT 1";
         $result = $this->_db->fetch_first($sql);
@@ -284,7 +283,7 @@ class Model_Org_Dept extends Netap_Model
      */
     public function getDeltaList($org_id, $update_time, $limit)
     {
-        $org_id = intval($org_id);
+        $org_id = floatval($org_id);
         $update_time = floatval($update_time);
         $limit = intval($limit);
 

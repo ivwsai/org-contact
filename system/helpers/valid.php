@@ -415,9 +415,8 @@ class Helper_Valid
     /**
      * 验证国内移动电话
      *
-     * @param string $number phone number to check
-     * @param array $lengths
-     * @return boolean
+     * @param $mobilephone
+     * @return bool
      */
     public static function mobilephone($mobilephone)
     {

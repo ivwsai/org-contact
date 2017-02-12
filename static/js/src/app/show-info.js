@@ -11,6 +11,7 @@ define(function(require, exports, module) {
     var GetStaff = require('./get-staff');
     var OperateTree = require('./operate-tree');
     var CommonFun = require('./common/action/action');
+
     var dataArr = [];
 
     var showInfo = {
@@ -167,7 +168,9 @@ define(function(require, exports, module) {
 
                 var treeArr = showInfo.mapData(data);
                 //默认设置树的第一个节点展开，并设置展开样式
-                treeArr[0].open = true;
+                if (treeArr[0]) {
+                    treeArr[0].open = true;
+                }
 
                 Global.treeObj = $.fn.zTree.init($('#classTree'), setting, treeArr);
 

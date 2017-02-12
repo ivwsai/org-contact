@@ -4,8 +4,6 @@ class Model_Org_User extends Netap_Model
 {
     public static $columns = array(
         'org_uid' => 0,
-        //'password' => "",//组织内密码，密码带有效期限
-        'user_id' => 0,
         'org_id' => 0,
         'dept_id' => 0,
         'name' => '',
@@ -46,7 +44,7 @@ class Model_Org_User extends Netap_Model
         $columns['spell1'] = $res['spell1'];
         $columns['spell2'] = $res['spell2'];
         $columns['create_time'] = date('Y-m-d H:i:s', time());
-        $columns['org_id'] = intval($org_id);
+        $columns['org_id'] = floatval($org_id);
 
         $columns = $this->prepareColumns(self::$columns, $columns);
 
@@ -73,12 +71,12 @@ class Model_Org_User extends Netap_Model
      */
     public function editUser($org_id, $user_id, array $columns)
     {
-        $org_id = intval($org_id);
-        $user_id = intval($user_id);
-        if (isset($columns['birthday']) && empty($columns['birthday'])) {
+        $org_id = floatval($org_id);
+        $user_id = floatval($user_id);
+        if (isset($columns['birthday']) && empty(trim($columns['birthday']))) {
             $columns['birthday'] = null;
         }
-        if (isset($columns['joindate']) && empty($columns['joindate'])) {
+        if (isset($columns['joindate']) && empty(trim($columns['joindate']))) {
             $columns['joindate'] = null;
         }
 
@@ -106,8 +104,8 @@ class Model_Org_User extends Netap_Model
      */
     public function deleteUser($org_id, $user_id)
     {
-        $org_id = intval($org_id);
-        $user_id = intval($user_id);
+        $org_id = floatval($org_id);
+        $user_id = floatval($user_id);
         $msec = round(microtime(true), 3) * 1000; //精确到毫秒
 
         $sql = "UPDATE `org_user` SET `update_time`=$msec, `status`=-1 WHERE `user_id`=$user_id AND `org_id`=$org_id";
@@ -123,8 +121,8 @@ class Model_Org_User extends Netap_Model
      */
     public function getUserInfo($org_id, $user_id)
     {
-        $org_id = intval($org_id);
-        $user_id = intval($user_id);
+        $org_id = floatval($org_id);
+        $user_id = floatval($user_id);
 
         $sql = "SELECT * FROM `org_user` WHERE `user_id`=$user_id AND `org_id`=$org_id AND `status`>=0 LIMIT 1";
         return $this->_db->fetch_first($sql);
@@ -139,8 +137,8 @@ class Model_Org_User extends Netap_Model
      */
     public function existsUser($org_id, $dept_id)
     {
-        $org_id = intval($org_id);
-        $dept_id = intval($dept_id);
+        $org_id = floatval($org_id);
+        $dept_id = floatval($dept_id);
 
         $sql = "SELECT 1 FROM `org_user` WHERE `org_id`=$org_id AND `dept_id`=$dept_id AND `status`>=0 LIMIT 1";
         $result = $this->_db->fetch_first($sql);
@@ -162,9 +160,9 @@ class Model_Org_User extends Netap_Model
      */
     public function getStaff($org_id, $offset, $limit, array $filter = null)
     {
-        $org_id = intval($org_id);
-        $offset = intval($offset);
-        $limit = intval($limit);
+        $org_id = floatval($org_id);
+        $offset = floatval($offset);
+        $limit = floatval($limit);
 
         $sql = "SELECT SQL_CALC_FOUND_ROWS u.*,d.name AS deptname";
         $sql .= " FROM org_user u LEFT JOIN org_dept d ON (u.org_id=d.org_id AND u.dept_id=d.dept_id)";
@@ -202,10 +200,23 @@ class Model_Org_User extends Netap_Model
         $result = $this->_db->fetch_all($sql);
         if (!empty($result)) {
             $total_query = $this->_db->fetch_first("SELECT FOUND_ROWS();");
-            $total = (int)$total_query['FOUND_ROWS()'];
+            $total = floatval($total_query['FOUND_ROWS()']);
         }
 
         return array("total" => $total, "data" => $result);
+    }
+
+    /**
+     * 根据手机号取得信息
+     *
+     * @param string $mobile
+     * @return null|array
+     */
+    public function getInfoByMobile($org_id, $mobile) {
+        $org_id = floatval($org_id);
+        $mobile = $this->_db->escapeString($mobile);
+        $sql = "SELECT * FROM `org_user` WHERE  `org_id`=$org_id AND `mobile`='$mobile' AND `status`>=0 LIMIT 1";
+        return $this->_db->fetch_first($sql);
     }
 
     /**
@@ -216,7 +227,7 @@ class Model_Org_User extends Netap_Model
      * @return array
      */
     public function getDeltaList($org_id, $update_time, $limit){
-        $org_id = intval($org_id);
+        $org_id = floatval($org_id);
         $update_time = floatval($update_time);
         $limit = intval($limit);
 

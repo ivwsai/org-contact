@@ -20,7 +20,7 @@ define(function(require, exports, module) {
             'edit': function(e, node){
 
                 var self = $(this);
-                var isLastNode = true;//CommonFun.getCurrentNode(self).find('span:first').hasClass('ico_docu');
+                var isLastNode = false;//CommonFun.getCurrentNode(self).find('span:first').hasClass('ico_docu');
                 var curNode = GetStaff.getSelectedNode(CommonFun.getCurrentNode(self), Global.treeObj);
                 var currentA = CommonFun.getCurrentNode(self);
 

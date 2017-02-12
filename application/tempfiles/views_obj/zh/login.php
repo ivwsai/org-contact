@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>狗不理企业通讯录</title>
+    <link rel="stylesheet" href="<?php echo BASE_URL?>/static/themes/default/css/style.min.css"/>
+    <meta name="keywords" content="企业通讯录管理中心,狗不理"/>
+    <meta name="description" content="是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！"/>
+    <style>#register-div{display: none}.message.error{text-align: left;padding:12px 0;}.hide{display: none}</style>
+</head>
+<body>
+<div class="header">
+    <div class="full-wrap">
+        <div class="logo-wrap">
+            <img class="logo" src="<?php echo BASE_URL?>/static/themes/default/images/app_icon.png" alt="狗不理-企业通讯录管理中心" title="狗不理-企业通讯录管理中心"/>
+
+            <h1>狗不理</h1>
+
+            <h2>企业通讯录管理中心</h2>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="full-wrap">
+        <div class="intro">
+            <p>
+                《狗不理》是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！
+            </p>
+            <div class="download-wrap">
+                <a class="btn-download btn-android" href="<?php echo BASE_URL?>/static/download/goubuli.apk" target="_blank">Andorid端下载</a>
+                <a class="btn-download btn-ios" href="https://itunes.apple.com/cn/app/go-believe/id966058087?mt=8">iOS端下载</a>
+            </div>
+            <div class="qrcode-wrap">
+                <span class="qrcode-wrap-img"><img src="<?php echo BASE_URL?>/static/themes/default/images/android_qrcode.png" width="120px" height="120px" /></span>
+                <span class="qrcode-wrap-img"><img src="<?php echo BASE_URL?>/static/themes/default/images/ios_qrcode.png"  width="120px" height="120px" /></span>
+            </div>
+        </div>
+        <div class="user-form">
+            <div class="tab"><a href="#" id="login-a" class="item active">登录</a><a href="#" id="register-a" class="item">注册</a></div>
+            <div id="login-div">
+            <form id="login" action="#" method="post">
+                <ul>
+                    <li>
+                        <label>邮箱:</label>
+                        <input type="text" class="ipt" value="" name="username"/>
+                    </li>
+                    <li>
+                        <label>密码:</label>
+                        <input type="password" class="ipt" value="" name="password"/>
+                    </li>
+                    <li><p class="message error hide"></p></li>
+                    <li class="opt">
+                        <input type="submit" class="btn btn-primary" value="登&nbsp;&nbsp;&nbsp;&nbsp;录"/>
+                    </li>
+                </ul>
+            </form>
+            </div>
+            <div id="register-div">
+                <form id="register" action="#" method="post">
+                    <ul>
+                        <li>
+                            <label>邮箱:</label>
+                            <input type="text" class="ipt" value="" name="username"/>
+                        </li>
+                        <li>
+                            <label>密码:</label>
+                            <input type="password" class="ipt" value="" name="password"/>
+                        </li>
+                        <li>
+                            <label>确认密码:</label>
+                            <input type="password" class="ipt" value="" name="re_password"/>
+                        </li>
+                        <li>
+                            <label>公司名称:</label>
+                            <input type="text" class="ipt" value="" name="org_name"/>
+                        </li>
+                        <li><p class="message error hide"></p></li>
+                        <li class="opt">
+                            <input type="submit" class="btn btn-primary" value="注&nbsp;&nbsp;&nbsp;&nbsp;册"/>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="c">Copyright © <span id="thisYear">2015</span> Goubuli. All Rights Reserved.</p>
+</div>
+<script src="<?php echo BASE_URL?>/static/lib/jquery.min.js" type="text/javascript"></script>
+<script type="application/javascript">
+$("#login-a").click(function(){
+    $(this).addClass("active");
+    $("#login-div").show();
+    $("#register-div").hide();
+    $("#register-a").removeClass("active");
+});
+$("#register-a").click(function(){
+    $(this).addClass("active");
+    $("#register-div").show();
+    $("#login-div").hide();
+    $("#login-a").removeClass("active");
+});
+
+//登录
+$("#login").submit(function(){
+    var _error = $(this).find(".error");
+    $.ajax({
+        beforeSend : function () {
+            _error.hide();
+        },
+        type: "POST",
+        url: "<?php echo BASE_URL?>/login/console",
+        data: $(this).serializeArray(),
+        success: function(data){
+            window.location.href = '<?php echo BASE_URL?>';
+        },
+        error:function(jqXHR, textStatus, errorThrown ){
+            var data = JSON.parse(jqXHR.responseText);
+            _error.html(data.msg).show();
+        }
+    });
+
+    return false;
+});
+
+//注册
+$("#register").submit(function(){
+    var _error = $(this).find(".error");
+    $.ajax({
+        beforeSend : function () {
+            _error.hide();
+        },
+        type: "POST",
+        url: "<?php echo BASE_URL?>/register",
+        data: $(this).serializeArray(),
+        success: function(data){
+            //$("#login-a").click();
+            _error.html(data.msg).show();
+        },
+        error:function(jqXHR, textStatus, errorThrown ){
+            var data = JSON.parse(jqXHR.responseText);
+            _error.html(data.msg).show();
+        }
+    });
+
+    return false;
+});
+</script>
+</body>
+</html>

@@ -28,7 +28,7 @@ define(function(require, exports, module) {
 
 
                 Global.curA = curA = CommonFun.getCurrentNode(self);
-                var isLastNode = true;//curA.find('span:first').hasClass('ico_docu');
+                var isLastNode = false;//curA.find('span:first').hasClass('ico_docu');
 
                 //获取父节点，分别有“新增学院”和“新建下级”两种情况
                 if ($(node[0]).hasClass('btn_add')){
@@ -76,7 +76,7 @@ define(function(require, exports, module) {
                         'name': nodename,
                         'shortname': nodename,
                         'chief_uid': +managerId,
-                        'seq':seq
+                        'seq':seq ? seq : 0
                     };
 
                     Controller.orgManager.add(data,function(data){

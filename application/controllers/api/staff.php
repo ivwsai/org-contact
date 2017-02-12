@@ -32,7 +32,6 @@ class Controller_Staff extends Controller_Abs_Basic
 
         $user_service = new Service_User();
         $result = $user_service->addUser($this->get_org_id(), $_POST);
-
         $res = $user_service->getUserInfo($this->get_org_id(), $result);
 
         Helper_Http::writeJson(200, $res);

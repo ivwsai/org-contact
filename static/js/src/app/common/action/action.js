@@ -6,7 +6,15 @@
 define(function (require, exports, module) {
     var $ = require('$');
     var ConfirmBox = require('../../../lib/cmp/dialog/confirm-box');
+    var Action = require('../../../lib/util/dom/action');
     var dataArr = [];
+    $(function() {
+        Action.listen({
+            'loginOut': function (e, node) {
+                window.location.href = '/login/loginout';
+            }
+        });
+    });
 
     var CommonFun = {
         //树的返回数据处理函数

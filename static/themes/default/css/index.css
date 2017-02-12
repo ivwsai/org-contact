@@ -276,7 +276,12 @@ a{
 #main_title .btn_area .appeal:hover{
   background-image: url("../images/appeal_cur.png");
 }
-
+#main_title .btn_area .exit{
+  background-image: url("../images/exit.png");
+}
+#main_title .btn_area .exit:hover{
+  background-image: url("../images/exit_cur.png");
+}
 /* stu_list_tip */
 #stu_list_tip{
   padding: 10px 10px 15px;

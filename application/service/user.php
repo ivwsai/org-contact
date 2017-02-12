@@ -22,66 +22,13 @@ class Service_User extends Service_Base
         $ds = new Netap_DsTa();
         $db_link = $ds->getDb($org_ds);
 
-        $user_id = 0;
-        $isBinding = true;
-        $tipMsg = "";
-        $account_model = new Model_Account($db_link);
-        do {
-            //手机号已经使用过
-            if (isset($user['mobile']) && !empty($user['mobile'])) {
-                $res = $account_model->getInfoByMobile($user['mobile']);
-                if ($res) {
-                    $user_id = $res['user_id'];
-                    $tipMsg = "在组织内手机号已经作为帐号存在";
-                    break;
-                }
-            }
-
-            //用户名已经使用过
-            if (isset($user['username']) && !empty($user['username'])) {
-                $res = $account_model->getInfoByUserName($user['username']);
-                if ($res) {
-                    $user_id = $res['user_id'];
-                    $tipMsg = "在组织内用户名已经作为帐号存在";
-                    break;
-                }
-            }
-
-            //邮箱已经使用过
-            if (isset($user['email']) && !empty($user['email'])) {
-                $res = $account_model->getInfoByEmail($user['email']);
-                if ($res) {
-                    $user_id = $res['user_id'];
-                    $tipMsg = "在组织内邮箱已经作为帐号存在";
-                    break;
-                }
-            }
-
-            //明文密码加密储存
-            $user['password'] = isset($user['password']) && !empty($user['password']) ? $user['password'] : '123456';
-            $user_id = $account_model->create($user);
-            $tipMsg = "创建系统帐号失败";
-            $isBinding = false;
-        } while (0);
-
-        if ($user_id <= 0) {
-            $ds->rollback();
-            Helper_Http::writeJson(500, $tipMsg);
-        }
-
         $user_model = new Model_Org_User($db_link);
-
-        //如果不是新建判断用户在一个组织内只能有一条记录
-        if ($isBinding) {
-            $res = $user_model->getUserInfo($org_id, $user_id);
-            if ($res) {
-                $ds->rollback();
-                Helper_Http::writeJson(400, $tipMsg);
-            }
+        $user_info = $user_model->getInfoByMobile($org_id, $user['mobile']);
+        if ($user_info) {
+            Helper_Http::writeJson(400, "手机号单位中已存在");
         }
 
-        $user['user_id'] = $user_id;
-        $user_model->addUser($org_id, $user);
+        $user_id = $user_model->addUser($org_id, $user);
         if (!$ds->commit()) {
             return null;
         }
@@ -105,6 +52,11 @@ class Service_User extends Service_Base
         }
 
         $user_model = new Model_Org_User($this->db_link);
+        $user_info = $user_model->getInfoByMobile($org_id, $new_user['mobile']);
+        if ($user_info && $user_info['user_id'] != $old_user['user_id']) {
+            Helper_Http::writeJson(400, "手机号单位中已存在");
+        }
+
         return $user_model->editUser($org_id, $old_user['user_id'], $new_user);
     }
 

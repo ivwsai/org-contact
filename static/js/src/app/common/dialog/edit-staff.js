@@ -23,7 +23,7 @@ define(function(require, exports, module) {
 
         'editStaff': function(e, node){
             uid = $(this).closest('tr').attr('name');
-            var deptname = $(this).closest('tr').find('td').eq(4).text();
+            var deptname = $(this).closest('tr').find('td').eq(3).text();
 
             Controller.orgManager.getSingleInfo(uid,function(data){
                 //data.joindate = CommonFun.stampToTime(data.joindate);

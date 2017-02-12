@@ -8,6 +8,11 @@ abstract class Controller_Abs_Basic extends Netap_Controller
 {
     public function before()
     {
+        session_start();
+        if (empty($_SESSION) && Netap_Request::$controller != 'Controller_Login') {
+            Helper_Http::redirect("/login");
+        }
+
         /* 先执行上级控制器 */
         parent::before();
 
@@ -32,15 +37,17 @@ abstract class Controller_Abs_Basic extends Netap_Controller
     }
 
     public function get_org_id() {
-        return 10000;
+        return isset($_SESSION['org_id']) ? floatval($_SESSION['org_id']) : 0;
     }
 
     public function get_org_name() {
-        return '羊蹄甲';
+        return isset($_SESSION['org_name']) ? $_SESSION['org_name'] : "";
     }
 
     public function needAdmin() {
-        //Helper_Http::writeJson(403, Netap_Lang::get('lang_system', 'not_have_permission'));
+        if (!isset($_SESSION['admin'], $_SESSION['user_id']) || $_SESSION['admin'] != 1) {
+            Helper_Http::writeJson(403, Netap_Lang::get('lang_system', 'not_have_permission'));
+        }
     }
 
     /**

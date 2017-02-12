@@ -95,7 +95,7 @@ define(function(require, exports, module) {
                     'name': username,
                     'password': '',
                     'gender': gender,
-                    'dept_id': deptId,
+                    'dept_id': deptId > 0 ? deptId : 0,
                     'title': title,
                     'mobile': mobile,
                     'email': email,
