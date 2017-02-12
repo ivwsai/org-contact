@@ -7,3 +7,12 @@
 3，项目的应用配置文件请放在application/config目录下
 
 4，如果使用apache服务器，请修改.htaccess文件确保RewriteBase目录的正确配置
+
+
+
+开发环境：
+#生成image
+docker-compose build
+
+#启动服务
+docker-compose up

@@ -1,0 +1,8 @@
+#!/bin/sh
+unset GIT_DIR
+
+app_dir="/data/wwwroot/org"
+cd ${app_dir} || exit
+git pull
+    
+exit 0
