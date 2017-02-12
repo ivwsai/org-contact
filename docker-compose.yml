@@ -1,0 +1,14 @@
+
+
+fpm-dev:
+  restart: always
+  build: ./php-dev/
+  ports:
+      - "2401:22"
+  volumes:
+    - ./web:/var/www/html
+    - ./php-dev/etc:/usr/local/etc
+
+  net: "host"
+
+
