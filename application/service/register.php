@@ -15,7 +15,7 @@ class Service_Register extends Service_Base
 
         $organization_model = new Model_Organization($db_link);
         if ($organization_model->getInfoByName($_POST['org_name'])) {
-            Helper_Http::writeJson(400, "组织名称已经存在");
+            Helper_Http::writeJson(400, "公司名称已经存在");
         }
 
         //username 填入的是邮箱
@@ -29,13 +29,13 @@ class Service_Register extends Service_Base
 
         $org_id = $organization_model->addOrg($params);
         if (!$org_id) {
-            Helper_Http::writeJson(400, "注册组织失败");
+            Helper_Http::writeJson(400, "注册公司失败");
         }
 
         $params['org_id'] = $org_id;
         $user_id = $account_model->create($params);
         if (!$user_id) {
-            Helper_Http::writeJson(400, "注册组织后创建管理员失败");
+            Helper_Http::writeJson(400, "注册公司后创建管理员失败");
         }
 
         if (!$ds->commit()) {

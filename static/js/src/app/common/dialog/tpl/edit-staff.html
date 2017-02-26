@@ -43,12 +43,12 @@
         {{endif}}
       </li>
       <li class="ui-form-item">
-        <label for="joindate"><b>*</b>入司时间</label>
+        <label for="joindate">入司时间</label>
         <input type="text" value="{{info.joindate}}" name="joindate" readonly="true" id="joindate" />
       </li>
       <li>
         <label for="birthday">生日</label>
-        <input type="text" disabled="disabled" readonly="true" name="birthday" id="birthday" value="{{if (info.birthday !== '0000-00-00')}} {{info.birthday}} {{endif}}" />
+        <input type="text" disabled="disabled" readonly="true" name="birthday" id="birthday" value="{{if (info.birthday !== '0000-00-00')}}{{info.birthday}}{{endif}}" />
       </li>
       <li>
         <label for="seat">座位</label>
