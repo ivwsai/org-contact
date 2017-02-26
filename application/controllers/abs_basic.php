@@ -9,7 +9,9 @@ abstract class Controller_Abs_Basic extends Netap_Controller
     public function before()
     {
         session_start();
-        if (empty($_SESSION) && Netap_Request::$controller != 'Controller_Login') {
+        if (empty($_SESSION)
+            && Netap_Request::$controller != 'Controller_Login'
+            && Netap_Request::$controller != 'Controller_Register') {
             Helper_Http::redirect("/login");
         }
 
