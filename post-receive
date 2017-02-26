@@ -1,8 +1,12 @@
 #!/bin/sh
 unset GIT_DIR
-
 app_dir="/data/wwwroot/org"
+
+#保证日志文件目录存在
+mkdir -p "${app_dir}/application/tempfiles/logs"
+
 cd ${app_dir} || exit
 git pull
-    
+
+
 exit 0

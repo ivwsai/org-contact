@@ -12,7 +12,7 @@ CREATE TABLE `account` (
   UNIQUE KEY `mobile_UNIQUE` (`mobile`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=48197 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='单位职员表'
+) ENGINE=InnoDB AUTO_INCREMENT=48197 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='单位职员表';
 
 CREATE TABLE `org_dept` (
   `dept_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '部门编号',
@@ -31,7 +31,7 @@ CREATE TABLE `org_dept` (
   KEY `update_time_INDEX` (`update_time`),
   KEY `name_INDEX` (`name`),
   KEY `org_id_INDEX` (`org_id`,`status`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='部门表'
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='部门表';
 
 CREATE TABLE `org_user` (
   `user_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '组织职员编号',
@@ -58,7 +58,7 @@ CREATE TABLE `org_user` (
   KEY `update_time_INDEX` (`update_time`),
   KEY `name_INDEX` (`name`),
   KEY `org_id_INDEX` (`org_id`,`status`,`dept_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='单位职员表'
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='单位职员表';
 
 CREATE TABLE `organization` (
   `org_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '组织ID',
@@ -66,4 +66,4 @@ CREATE TABLE `organization` (
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`org_id`),
   UNIQUE KEY `org_name_UNIQUE` (`org_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='机构表'
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='机构表';
