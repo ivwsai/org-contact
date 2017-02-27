@@ -21,8 +21,8 @@ body,html{margin:0;padding:0;width:100%;height:100%}dd,dl,dt,form,h1,h2,h3,h4,h5
   </div>
   <dl class="down-list">
     <dd>
-    <a id="android" class="down-btn-android">android版下载</a>
-    <a id="iphone" class="down-btn-iphone">iPhone版下载</a>
+    <a id="android" href="http://goubuli.mobi/static/download/goubuli.apk" class="down-btn-android">android版下载</a>
+    <a id="iphone" href="itms-services://?action=download-manifest&url=https://api.gobelieve.io/goubuli.plist" class="down-btn-iphone">iPhone版下载</a>
     </dd>
   </dl>
   <div class="tip">《狗不理》是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！<br /></div>
@@ -70,25 +70,12 @@ window.onload = function() {
   var ipad = ua.indexOf("iPad") > -1;
   var android = ua.indexOf("Android") > -1;
 
-  var androidURL = "http://goubuli.mobi/static/download/goubuli.apk";
-  var iOSURL = "itms-services://?action=download-manifest&url=https://api.gobelieve.io/goubuli.plist";
-
   if (android) {
       document.getElementById('android').style.display="block";
       document.getElementById('tipandroid').style.display="block";
-
-      var androidBtn = document.getElementById('android');
-      androidBtn.onclick = function() {
-  			androidBtn.href = androidURL;
-  		};
   } else if (iphone || ipod || ipad) {
       document.getElementById('iphone').style.display="block";
       document.getElementById('tipios').style.display="block";
-
-      var iphoneBtn = document.getElementById('iphone');
-      iphoneBtn.onclick = function() {
-  			iphoneBtn.href = iOSURL;
-  		};
   }
 
   (function func() {
