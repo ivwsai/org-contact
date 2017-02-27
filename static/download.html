@@ -10,7 +10,7 @@
 <meta name="keywords" content="企业通讯录，移动办公"/>
 <title>狗不理企业通讯录</title>
 <style type="text/css">
-body,html{margin:0;padding:0;width:100%;height:100%}dd,dl,dt,form,h1,h2,h3,h4,h5,h6,input,ol,p,textarea,ul{margin:0}ol,ul{list-style:none}input,ol,ul{padding:0}table{margin:0 auto;width:100%;border-collapse:collapse}a img{border:0}body{font:normal normal normal 13px/20px '微软雅黑';font-size:13px}.container{overflow:hidden}.logo{background:url(http://goubuli.mobi/static/themes/default/images/app_icon.png);background-size:120px 120px;width:120px;height:120px;margin:30px auto 0 auto}.tip{font-size:14px;color:#9f9f9f;width:300px;margin:0 auto;text-align:center;line-height:25px}.tip h2{font-size:20px;height:40px;line-height:40px}.tip p{color:#E7604A}#tipandroid,#tipios{color:#E7604A;display:none}#android{display:none}#iphone{display:none}.down-list{padding:10px 40px;text-align:center}.down-list dt{font-size:18px;height:40px;line-height:40px;margin-bottom:5px;color:#9f9f9f}.down-list dd .down-btn-android,.down-list dd .down-btn-iphone{display:block;width:100%;height:50px;line-height:50px;text-align:center;margin:0 auto 15px auto;border-radius:25px;font-size:18px;color:#fff;text-decoration:none}.down-list dd .down-btn-android{background:#a5d188}.down-list dd .down-btn-iphone{background:#76aed9}.box{background:#fff none repeat scroll 0 0;margin:0 auto;max-width:640px;position:relative;width:100%;text-align:center}#guide{background:#000 none repeat scroll 0 0;display:none;height:100%;width:100%;left:0;opacity:.9;position:absolute;top:0;z-index:100;color:#fff;min-height:720px;text-align:center}#arrow{position:absolute;right:0;z-index:2;width:auto}#pic{width:auto}#button{border:2px solid #fff;border-radius:.7em;color:#fff;display:block;font-size:1.2em;height:1.4em;left:70%;line-height:1.4em;position:absolute;text-align:center;top:155px;vertical-align:middle;width:20%;z-index:2}.wrapper{width:100%}
+body,html{margin:0;padding:0;width:100%;height:100%}dd,dl,dt,form,h1,h2,h3,h4,h5,h6,input,ol,p,textarea,ul{margin:0}ol,ul{list-style:none}input,ol,ul{padding:0}table{margin:0 auto;width:100%;border-collapse:collapse}a img{border:0}body{font:normal normal normal 13px/20px '微软雅黑';font-size:13px}.container{overflow:hidden}.logo{background:url(http://goubuli.mobi/static/themes/default/images/app_icon.png);background-size:120px 120px;width:120px;height:120px;margin:30px auto 0 auto}.tip{font-size:14px;color:#9f9f9f;width:300px;margin:0 auto;text-align:center;line-height:25px}.tip h2{font-size:20px;height:40px;line-height:40px}.tip p{color:#E7604A}.down-list{padding:10px 40px;text-align:center}.down-list dt{font-size:18px;height:40px;line-height:40px;margin-bottom:5px;color:#9f9f9f}.down-list dd .down-btn-android,.down-list dd .down-btn-iphone{display:block;width:100%;height:50px;line-height:50px;text-align:center;margin:0 auto 15px auto;border-radius:25px;font-size:18px;color:#fff;text-decoration:none}.down-list dd .down-btn-android{background:#a5d188}.down-list dd .down-btn-iphone{background:#76aed9}.box{background:#fff none repeat scroll 0 0;margin:0 auto;max-width:640px;position:relative;width:100%;text-align:center}#guide{background:#000 none repeat scroll 0 0;display:none;height:100%;width:100%;left:0;opacity:.9;position:absolute;top:0;z-index:100;color:#fff;min-height:720px;text-align:center}#arrow{position:absolute;right:0;z-index:2;width:auto}#pic{width:auto}#button{border:2px solid #fff;border-radius:.7em;color:#fff;display:block;font-size:1.2em;height:1.4em;left:70%;line-height:1.4em;position:absolute;text-align:center;top:155px;vertical-align:middle;width:20%;z-index:2}.wrapper{width:100%}
 </style>
 </head>
 <body>
@@ -26,11 +26,8 @@ body,html{margin:0;padding:0;width:100%;height:100%}dd,dl,dt,form,h1,h2,h3,h4,h5
     </dd>
   </dl>
   <div class="tip">《狗不理》是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！<br /></div>
-  <div class="tip" id="tipios">
-    <p>使用微信扫描并打开页面的iOS用户，请点击页面右上角，在弹出框中选择“在safari中打开”，进行下载</p>
-  </div>
-    <div class="tip" id="tipandroid">
-    <p>使用微信扫描并打开页面的用户，请点击页面右上角，在弹出框中选择“在浏览器中打开”，进行下载</p>
+  <div class="tip">
+    <p>使用微信扫描打开页面的用户，请点击页面右上角，在弹出框中选择“在浏览器中打开”，进行下载</p>
   </div>
 </div>
 <div id="guide">
@@ -71,11 +68,9 @@ window.onload = function() {
   var android = ua.indexOf("Android") > -1;
 
   if (android) {
-      document.getElementById('android').style.display="block";
-      document.getElementById('tipandroid').style.display="block";
+      document.getElementById('iphone').style.display="none";
   } else if (iphone || ipod || ipad) {
-      document.getElementById('iphone').style.display="block";
-      document.getElementById('tipios').style.display="block";
+      document.getElementById('android').style.display="none";
   }
 
   (function func() {
