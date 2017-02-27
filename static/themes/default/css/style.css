@@ -178,12 +178,12 @@ li {
 .btn-download:hover {
     background-color: #73aa27; }
 .btn-download.btn-android {
-    background-image: url("../images/global/android_icon.png");
+    background-image: url("../images/android_icon.png");
     background-position: 8px 3px;
     background-size: 40px auto;
     text-indent: 52px; }
 .btn-download.btn-ios {
-    background-image: url("../images/global/apple_icon.png");
+    background-image: url("../images/apple_icon.png");
     background-position: 8px 3px;
     background-size: 40px auto; }
 
