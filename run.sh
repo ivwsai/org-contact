@@ -8,7 +8,7 @@ log_dir="${app_data}/logs"
 app_log_dir="$(pwd)/application/logs"
 
 name="goubuli.mobi"
-image="php"
+image="php_dev"
 
     
 mkdir -p ${log_dir}
