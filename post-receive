@@ -1,6 +1,6 @@
 #!/bin/sh
 unset GIT_DIR
-app_dir="/data/wwwroot/org"
+app_dir="/data/wwwroot/goubuli.mobi"
 
 #保证日志文件目录存在
 mkdir -p "${app_dir}/application/tempfiles/logs"

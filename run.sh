@@ -1,6 +1,5 @@
 #!/bin/bash
 
-env="prod" # prod
 curr_dir=$(pwd)
 docker_dir="$(pwd)/docker"
 
@@ -8,8 +7,10 @@ app_data="$(pwd)/group"
 log_dir="${app_data}/logs"
 app_log_dir="$(pwd)/application/logs"
 
-php="org-php"
+name="goubuli.mobi"
+image="php"
 
+    
 mkdir -p ${log_dir}
 mkdir -p ${app_log_dir}
 chmod -R 0777 ${app_log_dir}
@@ -18,9 +19,7 @@ is_running() {
     return $(docker ps -a |grep $1 | wc -l)
 }
 
-start_momo() {
-    name=${php}
-    image="php"
+start() {
     is_running=$(docker ps -a |grep ${name} | wc -l)
     if [ ${is_running} == 0 ]; then
         echo "start ${name}..."
@@ -31,20 +30,16 @@ start_momo() {
     fi
 }
 
-start() {
-    start_momo
-}
-
 restart() {
-    docker restart ${php}
+    docker restart ${name}
 }
 
 stop() {
-    docker stop ${php}
+    docker stop ${name}
 }
 
 rm() {
-    docker rm ${php}
+    docker rm ${name}
 }
 
 case "$1" in
