@@ -1,56 +1,90 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>狗不理客户端下载</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .wrap {
-            text-align: center;
-            padding: 150px 0
-        }
-
-        .download-wrap img {
-            width: 240px;
-        }
-
-        .hide {
-            display: none;
-        }
-
-
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="《狗不理》是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！"/>
+<meta name="keywords" content="企业通讯录，移动办公"/>
+<title>狗不理企业通讯录</title>
+<style type="text/css">
+body,html{margin:0;padding:0;width:100%;height:100%}dd,dl,dt,form,h1,h2,h3,h4,h5,h6,input,ol,p,textarea,ul{margin:0}ol,ul{list-style:none}input,ol,ul{padding:0}table{margin:0 auto;width:100%;border-collapse:collapse}a img{border:0}body{font:normal normal normal 13px/20px '微软雅黑';font-size:13px}.container{overflow:hidden}.logo{background:url(http://goubuli.mobi/static/themes/default/images/app_icon.png);background-size:120px 120px;width:120px;height:120px;margin:30px auto 0 auto}.tip{font-size:14px;color:#9f9f9f;width:300px;margin:0 auto;text-align:center;line-height:25px}.tip h2{font-size:20px;height:40px;line-height:40px}.tip p{color:#E7604A}.down-list{padding:10px 40px;text-align:center}.down-list dt{font-size:18px;height:40px;line-height:40px;margin-bottom:5px;color:#9f9f9f}.down-list dd .down-btn-android,.down-list dd .down-btn-iphone{display:block;width:100%;height:50px;line-height:50px;text-align:center;margin:0 auto 15px auto;border-radius:25px;font-size:18px;color:#fff;text-decoration:none}.down-list dd .down-btn-android{background:#a5d188}.down-list dd .down-btn-iphone{background:#76aed9}.box{background:#fff none repeat scroll 0 0;margin:0 auto;max-width:640px;position:relative;width:100%;text-align:center}#guide{background:#000 none repeat scroll 0 0;display:none;height:100%;width:100%;left:0;opacity:.9;position:absolute;top:0;z-index:100;color:#fff;min-height:720px;text-align:center}#arrow{position:absolute;right:0;z-index:2;width:auto}#pic{width:auto}#button{border:2px solid #fff;border-radius:.7em;color:#fff;display:block;font-size:1.2em;height:1.4em;left:70%;line-height:1.4em;position:absolute;text-align:center;top:155px;vertical-align:middle;width:20%;z-index:2}.wrapper{width:100%}
+</style>
 </head>
 <body>
-<div class="wrap qrcode hide" id="qrcode">
-    <h1>下载狗不理客户端</h1>
-    <p>扫描以下二维码下载</p>
-    <img src="./images/qrcode.png" alt="">
+<div class="container">
+  <div class="logo"></div>
+  <div class="tip">
+    <h2>狗不理企业通讯录</h2>
+  </div>
+  <dl class="down-list">
+    <dd>
+    <a id="android" href="http://goubuli.mobi/download/goubuli.apk" class="down-btn-android">android版下载</a>
+    <a id="iphone" href="itms-services://?action=download-manifest&url=https://api.gobelieve.io/goubuli.plist" class="down-btn-iphone">iPhone版下载</a>
+    </dd>
+  </dl>
+  <div class="tip">《狗不理》是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！<br /></div>
+  <div class="tip">
+    <p>使用微信扫描打开页面的用户，请点击页面右上角，在弹出框中选择“在浏览器中打开”，进行下载</p>
+  </div>
 </div>
-<div class="wrap download-wrap hide" id="ios">
-    <a href="itms-services://?action=download-manifest&url=https://api.gobelieve.io/goubuli.plist">点击安装狗不理客户端</a>
+<div id="guide">
+  <img id="pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAABnCAYAAAFX1A0JAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjdFMDREQUE2NDE4OTExRTU5QTI5RUMzOEVBNjY4MTM1IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjdFMDREQUE1NDE4OTExRTU5QTI5RUMzOEVBNjY4MTM1IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOjkxNUMwQzczQzk0MEU1MTFCRUVDQkIwREZCMjgyNTU1IiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOkE5RUZCRTFFQTQ0MEU1MTE4REMyQUI0NTM0RDMzOUJBIi8+IDwvcmRmOkRlc2Ny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" /> <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAABQCAYAAAF0e4VvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQzI2MEE2NDE4OTExRTVBOEJFRDU3OUMwQUVBMUNFIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQzI2MEE1NDE4OTExRTVBOEJFRDU3OUMwQUVBMUNFIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOjkxNUMwQzczQzk0MEU1MTFCRUVDQkIwREZCMjgyNTU1IiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOkE5RUZCRTFFQTQ0MEU1MTE4REMyQUI0NTM0RDMzOUJBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+NHyvZwAABZhJREFUeNpi/P//PwMMMDEgABeMEwXEwoxQZSDBfzCZf8h6QsAkSBkQPwErh3K4QDQjLnsYAAIIpkwLWc8nEA1Tdh6I+UCi8kD8FllZDH6jMTjXkC21gRrCABBAKAYAwWcg5sV0JwPDMyB+CGKwIAk+AGI2IJYC4iswh8lD6aPY7GCBht0/dDuuwQTRJSZgC7AUmNkwDGOcQZcAWQ5y4i80/zAABBC6z3HEEANDD7rlIMwDxG9gfGQdk4B4PjRYUCREgHg3ED9CNsocSguBXAnE0jCJO1ABDA+CLPbHJgHCG3FJvESWQHbVE2yhC8L22IySxhXsK3BJvECXgFl+GCPcoSoksRmlgS4Ik1iCTYIJml4xAEAAMWBTDcV3gdgKW+phwAFeA/EHIFbFl3hgwA2U4qDJooGQk0ARfxOIN0Pj+ggQN2KLPRg4AcQOQKwDxC+A2AaIZYB4DjYbdgFxPFL0cCDJGYIwsuI2IM5CKqVeYAs9XKHUDMT8QJxHbDyAPG2AK0bRgSS0qLpATCYGgQ4gXoIrNtH9ACqoXgKxKHK5hM+GACA+jUsxNk/fAmIdPAkSxQZlKH2FAR9A0r0aVkXgw8ieBpVLcgwEAMxJuUC8loEYALVqK3p5hgvDak1TYhSDMEAASsugJaEgisKPR2ALCXWRIEi5CxEkKGhXu0KCVq37F/obitz5I9oq4qqCQlwUtJGWaiG5kP6AUdC5cAfGxwzvzIUPxcfBYd6951xf822BTbBkWkPqEDyxvST1C/ZCBHn9PGIFp2AFrtjwegFlbcKyL1FNZdWT5NkYtNJGtAluwUJT/gtsuOLG8KGuMbPyqeMTiPe8gYoagfxWBHOQcwlGoAEuwWPimHfJAaqpFw3UGu3guwH3chH2bnMN2vp9H0wSt7fmrdLar9YRxuDM195GULUeLKzFKbW9Y/WmostufG96xRqZ1C74TjMBuy7WNkxCcKJ3HrE57b0hVz7I8GfMxsocqaRhHrGCczAMEcgN9Vn3NjvbDpsPBZ3lT/ZIdTBn7d540XOI4Bj0QgSSPu+sQEb1z2XvPoGY7oxJrNh6YYMQgfxDN0SwDaasoKBD/8MKDsBDRFasi2w3RDDxbV+u+hegNTMIiSIK4/iwbEKbBxFlDx4EsaBACfSkoUgIWffA2EtBhHTqHnj00CFoL4IECyIeBcUggl0PUpcSs4N06bAgEkGHZVVIkL4Pfgvj8Hb2vfH74H/YYWb+b968+d7//980Ke2qUcECO1NFcNrpgnwUVkUM/nVs72rIWvUp7bb6yNfYwQvWBCN8A0p0V/C00z1CCG7iWnT0TUhKgjtWBHOxttsQ/OT3chqJL4FOxzxu6AglqLb8rWBIsCIYy0qgU/NGcAMZoE7wDDKNK5ZYXWV0h7cHjRBU79nvXgr6BPuCX4L7sfNeoK8OBY/a+f4k1OstcvN3HLtHaPUN7RU/f0rwhQGUWmovbeSvGdUmoYYefy44Rv11O64rMpgNCNsSvCIYWU9EEWpS/wjKcT3q8NR9LbfrOuEJsm2bEcXziCrh2zNfU5J3CLAi/bhCI49bO12Sf4n7vCpJ0GRtu+o2vWfXoWKv/CV3sdNcEEM0rAn6ESv6hAch3dGXoBWW1PFPpgTdNDqdps+8ZFOCYZxrM2S39yXQVfaQpasbfc2aoJfpufDVWqEE47Rr3Vw+WhP0CB4zTR989HQogbaGScGxoBplrFzK8TnewQ5Cy5TgFjapgRE4tSaY4Mv9EdoafAj0pT7AVW0lWrYJwTTBQt2ZhhsQzNJ/ar42I4RgUDBFQ9vwtSUhBDr6AcFXwWFkUJf+4cPQngvW6J6mBDNkg5qJ7EVGlYvtudOYi820pCYrwTCq4TtrP7IkyCG9TwhEflsTFJDm2u8/RcalNjZP1/zXKTTKUv8BxTRJVfxU+BgAAAAASUVORK5CYII="/>
+  <p id="tip">点击右上角选择浏览器打开~</p>
+  <a id="button">好的</a>
 </div>
-<div class="wrap download-wrap hide" id="android">
-    <a href="http://goubuli.mobi/download/goubuli.apk">点击安装狗不理客户端</a>
-</div>
-<div class="wx-tip hide" id="wx-tip">
-    <h2>点击右上角『从浏览器中打开』!</h2>
-</div>
-<script>
-    if (/MicroMessenger/i.test(navigator.userAgent)) {
-        //微信
-        document.getElementById('wx-tip').style.display = 'block';
-    } else if (/ipad|iphone/i.test(navigator.userAgent.toLowerCase())) {
-        // android or ios 暂时支持iOS //(/android/i.test(navigator.userAgent.toLowerCase())) ||
-        document.getElementById('ios').style.display = 'block';
-    } else if (/android/i.test(navigator.userAgent.toLowerCase())) {
-        document.getElementById('android').style.display = 'block';
-    } else {
-        //PC
-        document.getElementById('qrcode').style.display = 'block';
-    }
 
+<script type="text/javascript">
+/*
+ * 智能机浏览器版本信息:
+ *
+ */
+var browser = {
+    versions: function () {
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {//移动终端浏览器版本信息
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+        };
+    }(),
+    language: (navigator.browserLanguage || navigator.language).toLowerCase()
+};
 
+window.onload = function() {
+  var ua = navigator.userAgent;
+  var iphone = ua.indexOf("iPhone") > -1;
+  var ipod = ua.indexOf("iPod") > -1;
+  var ipad = ua.indexOf("iPad") > -1;
+  var android = ua.indexOf("Android") > -1;
+
+  if (android) {
+      document.getElementById('iphone').style.display="none";
+  } else if (iphone || ipod || ipad) {
+      document.getElementById('android').style.display="none";
+  }
+
+  (function func() {
+  	if(navigator.userAgent.indexOf('MicroMessenger') != -1) {
+  		var button = document.getElementById('button');
+  		var guide = document.getElementById('guide');
+
+  		guide.style.display = 'block';
+  		button.onclick = function() {
+  			guide.style.display = 'none';
+  		};
+  	}
+  })();
+}
 </script>
 </body>
 </html>

@@ -44,4 +44,11 @@ class Service_Register extends Service_Base
 
         return array("org_id"=>$org_id, "user_id"=>$user_id, "msg"=>"注册成功");
     }
+
+    //检查邮箱是否被注册过
+    function checkRegMail($email) {
+      $org_ds = Helper_Ds::getGlobalDS();
+      $account_model = new Model_Account($org_ds);
+      return $account_model->getInfoByEmail($email);
+    }
 }

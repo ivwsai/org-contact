@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>狗不理企业通讯录</title>
-    <link rel="stylesheet" href="{BASE_URL}/static/themes/default/css/style.css"/>
-    <meta name="keywords" content="企业通讯录管理中心,狗不理"/>
+    <link rel="stylesheet" href="{BASE_URL}/static/themes/default/css/style.min.css"/>
+    <meta name="keywords" content="企业通讯录，移动办公"/>
     <meta name="description" content="是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！"/>
     <style>#register-div{display: none}.message.error{text-align: left;padding:12px 0;}.hide{display: none}</style>
 </head>
@@ -27,7 +27,7 @@
                 《狗不理》是一款免费的企业通讯录工具，可以随时、随地的通过网络将您企业的通讯录保持最新，让同事之间的沟通、协作变得更轻松！
             </p>
             <div class="download-wrap">
-                <a class="btn-download btn-android" href="{BASE_URL}/static/download/goubuli.apk" target="_blank">Andorid端下载</a>
+                <a class="btn-download btn-android" href="http://goubuli.mobi/download/goubuli.apk" target="_blank">Andorid端下载</a>
                 <a class="btn-download btn-ios" href="https://itunes.apple.com/cn/app/go-believe/id966058087?mt=8">iOS端下载</a>
             </div>
             <div class="qrcode-wrap">
@@ -57,10 +57,24 @@
             </div>
             <div id="register-div">
                 <form id="register" action="#" method="post">
-                    <ul>
-                        <li>
+                  <ul id="mail-field">
+                      <li>
+                          <label>邮箱:</label>
+                          <input type="text" class="ipt" value="" name="email"/>
+                      </li>
+                      <li><p class="message error hide"></p></li>
+                      <li class="opt">
+                          <input id="send-mail" type="button" class="btn btn-primary" value="发送验证码"/>
+                      </li>
+                  </ul>
+                    <ul id="register-field" class="hide">
+                        <li class="hide">
                             <label>邮箱:</label>
                             <input type="text" class="ipt" value="" name="username"/>
+                        </li>
+                        <li>
+                            <label>验证码: <a href="#" id="back-mail-field">返回</a> <a href="#"id="send-retry">重新发送</a></label>
+                            <input type="text" class="ipt" value="" name="verify_code"/>
                         </li>
                         <li>
                             <label>密码:</label>
@@ -145,6 +159,38 @@ $("#register").submit(function(){
     });
 
     return false;
+});
+
+//返回发送验证码页
+$("#back-mail-field").click(function(){
+  $("#mail-field").show();
+  $("#register-field").hide();
+});
+
+//发送验证码
+$("#send-mail,#send-retry").click(function(){
+  var _error = $("#register").find(".error");
+  $("#mail-field").hide();
+  $("#register-field").show();
+  //把邮箱填入帐号
+  $("#register input[name=username]").val($("#register input[name=email]").val());
+  $.ajax({
+      beforeSend : function () {
+          _error.hide();
+      },
+      type: "POST",
+      url: "{BASE_URL}/register/send_verify_code",
+      data: $("#register").serializeArray(),
+      success: function(data){
+          //$("#login-a").click();
+          _error.html(data.msg).show();
+      },
+      error:function(jqXHR, textStatus, errorThrown ){
+          var data = JSON.parse(jqXHR.responseText);
+          _error.html(data.msg).show();
+      }
+  });
+
 });
 </script>
 </body>
