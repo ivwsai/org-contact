@@ -120,6 +120,7 @@ class MySessionHandler implements SessionHandlerInterface
             if (isset($_COOKIE[$this->cookieName])) {
                 $data = $this->decode($_COOKIE[$this->cookieName], $this->secretKey);
                 $val = $this->serializeSessionData($data);
+                Netap_Logger::warn('session:'.var_export($data, true));
                 return $val;
             }
             return '';
@@ -168,7 +169,7 @@ abstract class Controller_Abs_Basic extends Netap_Controller
     public function before()
     {
         //todo放在配置文件中
-        $secret = "eMaVFjhuWzcKxuQ8zC7w9SzBW2qiPP7u"
+        $secret = "eMaVFjhuWzcKxuQ8zC7w9SzBW2qiPP7u";
         $handler = new MySessionHandler($secret, "PHPSESSID");
         session_set_save_handler($handler, true);
         session_start();
