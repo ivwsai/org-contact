@@ -1,5 +1,164 @@
 <?php defined('SYSPATH') or die ('No direct script access.');
 
+
+class MySessionHandler implements SessionHandlerInterface
+{
+    private $savePath;
+    private $cookieName;
+    private $secretKey;
+
+
+    public static function urlsafeB64Decode($input)
+    {
+        $remainder = strlen($input) % 4;
+        if ($remainder) {
+            $padlen = 4 - $remainder;
+            $input .= str_repeat('=', $padlen);
+        }
+        return base64_decode(strtr($input, '-_', '+/'));
+    }
+
+
+     public static function urlsafeB64Encode($input)
+     {
+          return str_replace('=', '', strtr(base64_encode($input), '+/', '-_'));
+      }
+
+      public static function encode( $payload,  $key,  $alg)
+      {
+          $jwt = self::urlsafeB64Encode(json_encode(['typ' => 'JWT', 'alg' => $alg])) . '.' . self::urlsafeB64Encode(json_encode($payload));
+          return $jwt . '.' . self::signature($jwt, $key, $alg);
+      }
+
+     public static function signature( $input,  $key,  $alg)
+      {
+          if ($alg == "HS256") {
+              $alg = "SHA256";
+          } else if ($alg == "HS512") {
+              $alg = "SHA512";
+          } else if ($alg == "HS384") {
+              $alg = "SHA384";
+          }
+          return self::urlsafeB64Encode(hash_hmac($alg, $input, $key, true));
+      }
+
+      public static function decode( $jwt,  $key)
+      {
+          $tokens = explode('.', $jwt);
+          if (count($tokens) != 3)
+              return false;
+
+          list($header64, $payload64, $sign) = $tokens;
+
+          $header = json_decode(self::urlsafeB64Decode($header64), JSON_OBJECT_AS_ARRAY);
+          if (empty($header['alg']))
+              return false;
+
+          if (self::signature($header64 . '.' . $payload64, $key, $header['alg']) !== $sign)
+              return false;
+
+          $payload = json_decode(self::urlsafeB64Decode($payload64), JSON_OBJECT_AS_ARRAY);
+
+          $time = $_SERVER['REQUEST_TIME'];
+          if (isset($payload['iat']) && $payload['iat'] > $time)
+              return false;
+
+          if (isset($payload['exp']) && $payload['exp'] < $time)
+              return false;
+
+          return $payload;
+      }
+
+
+      public function serializeSessionData($array)
+      {
+          $result = '';
+          foreach ($array as $key => $value) {
+              $result .= $key . "|" . serialize($value);
+          }
+          return $result;
+      }
+      public function unSerializeSessionData($session_data)
+      {
+          $return_data = array();
+          $offset = 0;
+          while ($offset < strlen($session_data)) {
+              if (!strstr(substr($session_data, $offset), "|")) {
+                  throw new Exception("invalid data, remaining: " . substr($session_data, $offset));
+              }
+              $pos = strpos($session_data, "|", $offset);
+              $num = $pos - $offset;
+              $varname = substr($session_data, $offset, $num);
+              $offset += $num + 1;
+              $data = unserialize(substr($session_data, $offset));
+              $return_data[$varname] = $data;
+              $offset += strlen(serialize($data));
+          }
+          return $return_data;
+      }
+
+      public function __construct($secretKey, $cookieName) {
+          $this->secretKey = $secretKey;
+          $this->cookieName = $cookieName;
+      }
+
+    public function open($savePath, $sessionName)
+    {
+        Netap_Logger::warn('open session:'.$savePath.' name:'.$sessionName);
+        $this->savePath = $savePath;
+        return true;
+    }
+
+    public function close()
+    {
+        return true;
+    }
+
+    public function read($id)
+    {
+       try {
+            if (isset($_COOKIE[$this->cookieName])) {
+                $data = $this->decode($_COOKIE[$this->cookieName], $this->secretKey);
+                $val = $this->serializeSessionData($data);
+                return $val;
+            }
+            return '';
+        } catch (Exception $ex) {
+            Netap_Logger::warn("read session exception:".$ex);
+            return '';
+        }
+    }
+
+    public function write($id, $data)
+    {
+        $sessionObj = $this->unSerializeSessionData($data);
+        $val = $this->encode($sessionObj, $this->secretKey, "HS256");
+
+        if (!headers_sent()) {
+            if ($data) {
+                setcookie($this->cookieName, $val, 0, "/");
+            } else {
+                setcookie($this->cookieName, null, 0, "/");
+            }
+        }
+        return true;
+    }
+
+    public function destroy($id)
+    {
+        if (!headers_sent()) {
+            setcookie($this->cookieName, null, 0, "/");
+        }
+        return true;
+    }
+
+    public function gc($maxlifetime)
+    {
+        return true;
+    }
+}
+
+
 /**
  * 主要用来实现一些控制器公用方法调用
  *
@@ -8,6 +167,10 @@ abstract class Controller_Abs_Basic extends Netap_Controller
 {
     public function before()
     {
+        //todo放在配置文件中
+        $secret = "eMaVFjhuWzcKxuQ8zC7w9SzBW2qiPP7u"
+        $handler = new MySessionHandler($secret, "PHPSESSID");
+        session_set_save_handler($handler, true);
         session_start();
         if (empty($_SESSION)
             && Netap_Request::$controller != 'Controller_Login'
